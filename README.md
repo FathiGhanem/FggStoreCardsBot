@@ -31,12 +31,9 @@ How to Run
 Install the required packages:
 
 pip install -r requirements.txt
-Add your template image and name it:
+Add your template image and name it:  card.png
 
-
-card.png
 Start the bot:
-
 python main.py
 Note: Make sure to update your Telegram Bot Token and the correct font path if needed.
 
@@ -66,6 +63,5 @@ requirements.txt: Required dependencies
 
 card.png: The template image
 
-Support
-This bot is private and used exclusively by FGGSTORE.
+
 
