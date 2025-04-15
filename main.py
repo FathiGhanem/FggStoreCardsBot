@@ -10,11 +10,10 @@ from telegram.ext import (
     ConversationHandler,
     filters
 )
-from datetime import datetime
+from datetime import datetime, timedelta
 import arabic_reshaper
 from bidi.algorithm import get_display
 from dotenv import load_dotenv
-
 
 load_dotenv()
 
@@ -54,7 +53,8 @@ def fill_card(data: dict, base_image_path: str, output_path: str):
     for key, value in data.items():
         pos = POSITIONS.get(key)
         if pos:
-            value = reshape_arabic_text(value)
+            if key in ["تاريخ الاصدار", "وقت الاصدار", "اسم العميل", "الفئة"]:
+                value = reshape_arabic_text(value)
 
             if key in ["تاريخ الاصدار", "وقت الاصدار"]:
                 font_to_use = small_font
@@ -144,10 +144,12 @@ async def name(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return ConversationHandler.END
 
     name_input = update.message.text.strip().split()[0]
-    context.user_data["اسم العميل"] = f"يا {name_input}"
-    now = datetime.now()
-    context.user_data["تاريخ الاصدار"] = now.strftime("%Y-%m-%d")
-    context.user_data["وقت الاصدار"] = now.strftime("%I:%M %p")
+    arabic_name = f"يا {name_input}"
+    context.user_data["اسم العميل"] = reshape_arabic_text(arabic_name)
+
+    now = datetime.utcnow() + timedelta(hours=3)
+    context.user_data["تاريخ الاصدار"] = reshape_arabic_text(now.strftime("%Y-%m-%d"))
+    context.user_data["وقت الاصدار"] = reshape_arabic_text(now.strftime("%I:%M %p"))
 
     base_path = "card.png"
     output_path = f"output_{update.message.chat_id}.png"
