@@ -1,4 +1,5 @@
-python-telegram-bot==20.3
-Pillow
-arabic-reshaper
-python-bidi
+python-telegram-bot==13.15
+telethon==1.39.0
+MetaTrader5==5.0.37
+openai==0.28
+python-dotenv
