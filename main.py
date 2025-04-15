@@ -13,9 +13,13 @@ from telegram.ext import (
 from datetime import datetime
 import arabic_reshaper
 from bidi.algorithm import get_display
+from dotenv import load_dotenv
 
-AUTHORIZED_USER_ID = 1928264225
-TOKEN = "7284369888:AAHr7WseiV4n-VM2mIxIYmk3zxECB7ZvJr4"
+
+load_dotenv()
+
+AUTHORIZED_USER_ID = int(os.getenv("AUTHORIZED_USER"))
+TOKEN = os.getenv("BOT_TOKEN")
 
 PRICE, COUNTRY, CODE, NAME = range(4)
 
