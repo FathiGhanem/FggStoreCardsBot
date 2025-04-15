@@ -28,7 +28,7 @@ logging.basicConfig(
     level=logging.INFO
 )
 
-FONT_PATH = "C:/Windows/Fonts/tahoma.ttf"
+FONT_PATH = "tahoma.ttf"
 FONT_SIZE = int(40 * 3.125)
 
 POSITIONS = {
