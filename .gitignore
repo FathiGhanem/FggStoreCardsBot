@@ -1,0 +1,6 @@
+tokins.env
+.env
+__pycache__/
+*.pyc
+*.log
+output_*.png
