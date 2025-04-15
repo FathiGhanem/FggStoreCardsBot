@@ -1,67 +1,97 @@
-Telegram PlayStation Card Bot
-A Telegram bot that automatically generates PlayStation Store card images, customized for FGGSTORE.
 
-Features
-Select card value (e.g., 10$, 25$, 50$)
+# 🎮 Telegram PlayStation Card Bot
 
-Choose country (USA, KSA, UAE)
+A Telegram bot that automatically generates PlayStation Store card images, customized for **FGGSTORE**.
 
-Enter and auto-format the activation code
+---
 
-Add customer name
+## ✨ Features
 
-Automatically include issue date and time
+✅ Select card value (e.g., 10$, 25$, 50$)  
+✅ Choose country (USA, KSA, UAE)  
+✅ Enter and auto-format the activation code  
+✅ Add customer name  
+✅ Automatically include issue date and time  
+✅ Generate a professional card image with all details  
 
-Generate a professional image output with all details
+---
 
-Technologies Used
-Python
+## 🛠 Technologies Used
 
-Pillow – for image manipulation
+- **Python**
+- **Pillow** – for image manipulation
+- **python-telegram-bot** – for Telegram bot interaction
+- **arabic_reshaper** + **python-bidi** – for proper Arabic text rendering
 
-python-telegram-bot – for Telegram bot handling
+---
 
-arabic_reshaper + python-bidi – for proper Arabic text rendering
+## 📸 Output Example
 
-Output Example
+![Sample Output](sample_card.png)
 
-(You can upload a real output image here)
+---
 
-How to Run
-Install the required packages:
+## 🚀 How to Run
 
-pip install -r requirements.txt
-Add your template image and name it:  card.png
+1. Install the required packages:
 
-Start the bot:
-python main.py
-Note: Make sure to update your Telegram Bot Token and the correct font path if needed.
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Deploying for Free (24/7)
+2. Add your card template image and name it exactly:
+
+   ```
+   card.png
+   ```
+
+3. Start the bot:
+
+   ```bash
+   python main.py
+   ```
+
+🔐 **Note:**  
+Make sure to:
+- Update your Telegram **Bot Token**  
+- Set the correct **font path** inside the script (if using custom Arabic font)
+
+---
+
+## ☁️ Deploying for Free (24/7)
+
 You can deploy this bot for free using:
 
-Render (https://render.com)
+- [Render](https://render.com)
+- [Railway](https://railway.app)
 
-Railway (https://railway.app)
+### ⚡ Quick Steps:
 
-Quick Steps
-Push your code to a GitHub repository
+1. Push your code to a GitHub repository  
+2. Connect your repo to **Render** or **Railway**  
+3. Add environment variable:
+   - `TOKEN` → *Your Telegram Bot Token*  
+4. Set the start command:
 
-Connect your GitHub repo to Render or Railway
+   ```bash
+   python main.py
+   ```
 
-Add the environment variable TOKEN with your bot's token
+Your bot will now run **24/7** 🎉
 
-Set the start command to:
+---
 
-python main.py
-Your bot will now run 24/7.
+## 📁 Project Structure
 
-Project Structure
-main.py: The main bot script
+```
+FGGSTORE-CARDSbot/
+├── main.py               # The main bot script
+├── requirements.txt      # Required dependencies
+├── card.png              # Your template image
+├── sample_card.png       # Output example (for README)
+└── README.md
+```
 
-requirements.txt: Required dependencies
+---
 
-card.png: The template image
-
-
-
+> Made with ❤️ for FGGSTORE
