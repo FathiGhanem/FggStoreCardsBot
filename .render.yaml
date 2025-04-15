@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: FggStoreCardsBot
+    runtime: python
+    repo: https://github.com/FathiGhanem/FggStoreCardsBot
+    branch: master
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python main.py"
+    envVars:
+      - key: BOT_TOKEN
+        fromEnvVar: BOT_TOKEN
+      - key: AUTHORIZED_USER
+        fromEnvVar: AUTHORIZED_USER
