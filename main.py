@@ -27,7 +27,7 @@ logging.basicConfig(
     level=logging.INFO
 )
 
-FONT_PATH = "tahoma.ttf"
+FONT_PATH = "Amiri-Regular.ttf"
 FONT_SIZE = int(40 * 3.125)
 
 POSITIONS = {
