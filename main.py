@@ -42,6 +42,17 @@ def reshape_arabic_text(text):
     reshaped = arabic_reshaper.reshape(text)
     return get_display(reshaped)
 
+def better_reshape_arabic_text(text):
+    words = text.split()
+    reshaped_words = []
+    
+    for word in words:
+        reshaped = arabic_reshaper.reshape(word)
+        displayed = get_display(reshaped)
+        reshaped_words.append(displayed)
+    
+    return ' '.join(reshaped_words[::-1])
+
 def fill_card(data: dict, base_image_path: str, output_path: str):
     image = Image.open(base_image_path).convert("RGBA")
     txt = Image.new("RGBA", image.size, (255, 255, 255, 0))
@@ -54,7 +65,10 @@ def fill_card(data: dict, base_image_path: str, output_path: str):
         pos = POSITIONS.get(key)
         if pos:
             if key in ["تاريخ الاصدار", "وقت الاصدار", "اسم العميل", "الفئة"]:
-                value = reshape_arabic_text(value)
+                if key == "اسم العميل" and "يا" in value:
+                    value = better_reshape_arabic_text(value)
+                else:
+                    value = reshape_arabic_text(value)
 
             if key in ["تاريخ الاصدار", "وقت الاصدار"]:
                 font_to_use = small_font
@@ -143,13 +157,13 @@ async def name(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("🚫 هذا البوت خاص بـ FGGSTORE فقط.")
         return ConversationHandler.END
 
-    name_input = update.message.text.strip().split()[0]
-    arabic_name = f"يا {name_input}"
-    context.user_data["اسم العميل"] = reshape_arabic_text(arabic_name)
+    name_input = update.message.text.strip()
+    full_name = f"يا {name_input}"
+    context.user_data["اسم العميل"] = full_name
 
     now = datetime.utcnow() + timedelta(hours=3)
-    context.user_data["تاريخ الاصدار"] = reshape_arabic_text(now.strftime("%Y-%m-%d"))
-    context.user_data["وقت الاصدار"] = reshape_arabic_text(now.strftime("%I:%M %p"))
+    context.user_data["تاريخ الاصدار"] = now.strftime("%Y-%m-%d")
+    context.user_data["وقت الاصدار"] = now.strftime("%I:%M %p")
 
     base_path = "card.png"
     output_path = f"output_{update.message.chat_id}.png"
