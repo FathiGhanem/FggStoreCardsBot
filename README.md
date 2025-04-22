@@ -81,15 +81,19 @@ Your bot will now run **24/7** 🎉
 
 ---
 
-## 📁 Project Structure
+## 📂 Project Structure
 
-```
-FGGSTORE-CARDSbot/
-├── main.py               # The main bot script
-├── requirements.txt      # Required dependencies
-├── card.png              # Your template image
-├── sample_card.png       # Output example (for README)
-└── README.md
+| File               | Description                                   |
+|--------------------|-----------------------------------------------|
+| `main.py`          | Main bot script                               |
+| `card.png`         | Base card template image                      |
+| `sample_card.png`  | Sample output card image                      |
+| `tahoma.ttf`       | Arabic font used in rendering text            |
+| `Amiri-Regular.ttf`| Optional Arabic font                          |
+| `requirements.txt` | Required Python packages                      |
+| `.env`             | Environment variables (BOT_TOKEN, USER_ID)    |
+| `Procfile`         | For deployment on Heroku / Render             |
+
 ```
 
 ---
