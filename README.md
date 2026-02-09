@@ -4,8 +4,6 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
 [![Telegram Bot API](https://img.shields.io/badge/Telegram%20Bot%20API-20.6-blue)](https://python-telegram-bot.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Docker](https://img.shields.io/badge/docker-ready-brightgreen)](https://www.docker.com/)
 
 A professional, open-source Telegram bot for automatically generating customized PlayStation Store card images with proper Arabic text support.
@@ -437,11 +435,6 @@ make docker-logs    # View logs
 
 ---
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
 
 ## 👨‍💻 Author
 
@@ -449,13 +442,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📞 Support
 
-- 📖 [Documentation](README.md)
-- 🐛 [Report Issues](https://github.com/yourusername/FggStoreCardsBot/issues)
-- 💬 [Discussions](https://github.com/yourusername/FggStoreCardsBot/discussions)
-
----
 
 <div align="center">
 
@@ -467,6 +454,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 [![GitHub forks](https://img.shields.io/github/forks/yourusername/FggStoreCardsBot?style=social)](https://github.com/yourusername/FggStoreCardsBot/network/members)
 [![GitHub watchers](https://img.shields.io/github/watchers/yourusername/FggStoreCardsBot?style=social)](https://github.com/yourusername/FggStoreCardsBot/watchers)
 
-**Open Source | MIT Licensed | Contributions Welcome**
+**Open Source | Contributions Welcome**
 
 </div>
