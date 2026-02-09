@@ -1,5 +1,8 @@
+# Core Dependencies
 python-telegram-bot==20.6
-Pillow
-python-dotenv
-arabic_reshaper
-python-bidi
+Pillow>=10.0.0
+python-dotenv>=1.0.0
+
+# Arabic Text Processing
+arabic-reshaper>=3.0.0
+python-bidi>=0.4.2

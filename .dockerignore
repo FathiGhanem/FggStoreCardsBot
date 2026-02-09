@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation (not needed in container)
+*.md
+!README.md
+
+# Environment files (use env_file in docker-compose)
+.env
+.env.*
+!.env.example
+
+# Temporary files
+temp/
+*.log
+output_*.png
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+tests/
+
+# Development
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# Deployment configs
+.render.yaml
+Procfile
+
+# Sample files
+sample_card.png
+Amiri-Regular.ttf

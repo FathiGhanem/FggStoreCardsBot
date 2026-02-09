@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fggstore-card-bot
+    restart: unless-stopped
+    
+    # Environment variables from .env file
+    env_file:
+      - .env
+    
+    # Alternative: Define environment variables directly
+    # environment:
+    #   - BOT_TOKEN=${BOT_TOKEN}
+    #   - AUTHORIZED_USER_ID=${AUTHORIZED_USER_ID}
+    #   - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    
+    # Volume mounts for assets and temp files
+    volumes:
+      - ./assets:/app/assets:ro
+      - ./templates:/app/templates:ro
+      - ./temp:/app/temp
+    
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    
+    # Resource limits (optional)
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+    
+    # Network mode
+    network_mode: bridge
